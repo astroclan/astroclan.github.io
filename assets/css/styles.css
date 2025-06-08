@@ -194,13 +194,13 @@ cursor: pointer;
 .join-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: 40px 0 20px;
+  padding: 20px 0 5px;
 }
 
 .join-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: 48px 0 24px;
+  padding: 24px 0 12px;
 }
 
 .join-button {
