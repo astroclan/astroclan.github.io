@@ -95,10 +95,10 @@ cursor: pointer;
   transform: scale(1.1);
 }
 
-.members-row {
+.card-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Adjust the space between member cards */
+  gap: 5px; /* Adjust the space between member cards */
   justify-content: center; /* Optional: keep them centered */
 }
 
@@ -322,7 +322,7 @@ cursor: pointer;
 /* ✅ Mobile Landscape – Less Tall Cards, Bigger Logos/Text */
 @media (orientation: landscape) and (max-width: 767px) {
   .card {
-    height: 60px; /* Less tall */
+    height: 40px; /* Less tall */
     padding: 10px 12px;
   }
 
