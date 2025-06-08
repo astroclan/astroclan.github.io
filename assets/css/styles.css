@@ -267,3 +267,84 @@ cursor: pointer;
     justify-content: flex-start;
   }
 }
+
+/* Default Mobile Portrait */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .card {
+    padding: 12px 14px;
+    height: 68px;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card h1 {
+    font-size: 15px;
+  }
+}
+
+/* Very Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    height: auto;
+    padding: 10px 12px;
+  }
+
+  .profile-pic {
+    width: 45px;
+    height: 45px;
+    margin-right: 12px;
+  }
+
+  .card h1 {
+    font-size: 17px;
+  }
+
+  .role-title {
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
+
+/* ✅ Mobile Landscape – Less Tall Cards, Bigger Logos/Text */
+@media (orientation: landscape) and (max-width: 767px) {
+  .card {
+    height: 60px; /* Less tall */
+    padding: 10px 12px;
+  }
+
+  .profile-pic {
+    width: 60px;
+    height: 60px; /* Bigger logo */
+    margin-right: 12px;
+  }
+
+  .card h1 {
+    font-size: 18px; /* Bigger text */
+  }
+
+  .role-title {
+    font-size: 1rem;
+  }
+
+  .social-buttons {
+    justify-content: flex-start;
+  }
+
+  .join-button-container {
+    justify-content: flex-start;
+  }
+}
