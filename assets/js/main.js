@@ -30,7 +30,7 @@ let startX = 0,
   startY = 0;
 let isDragging = false;
 let originalRect = null;
-const MIN_SIZE = 50; // Minimum size in pixels
+const MIN_SIZE = 80; // Minimum size in pixels
 
 function getTransforms(fromRect, targetW, targetH) {
   const scaleX = fromRect.width / targetW;
@@ -119,47 +119,37 @@ function closePopup() {
     translateY
   } = getTransforms(originalRect, finalW, finalH);
 
-  // Start the transition for the image back to origin
   popupImg.style.transition = 'transform 0.35s ease, border-radius 0.35s ease';
   popupImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
   popupImg.style.borderRadius = '50%';
-
-  // Start fading out overlay bg smoothly
   overlay.style.transition = 'background-color 0.35s ease';
   overlay.style.backgroundColor = 'rgba(0,0,0,0)';
 
-  // Use a named function to clean up after animation ends
-  function onTransitionEnd(e) {
-    // Ensure this is the transform transition on popupImg (ignore others)
-    if (e.target === popupImg && e.propertyName === 'transform') {
-      overlay.style.display = 'none';
+  popupImg.addEventListener('transitionend', () => {
+    overlay.style.display = 'none';
 
-      // Reset styles exactly here, after transition ends
-      popupImg.style.cssText = `
-        position: fixed;
-        max-width: 90vw;
-        max-height: 90vh;
-        touch-action: none;
-        pointer-events: none;
-        will-change: transform, border-radius;
-        object-fit: cover;
-      `;
+    // Clean reset
+    popupImg.removeAttribute('style');
+    popupImg.style.cssText = `
+      position: fixed;
+      max-width: 90vw;
+      max-height: 90vh;
+      touch-action: none;
+      pointer-events: none;
+      will-change: transform, border-radius;
+      object-fit: cover;
+    `;
 
-      overlay.style.transition = '';
-      overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
-
-      popupImg.removeEventListener('transitionend', onTransitionEnd);
-    }
-  }
-
-  popupImg.addEventListener('transitionend', onTransitionEnd);
+    overlay.style.transition = '';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
+  }, {
+    once: true
+  });
 }
 
-// Handle tap outside popup image
 overlay.addEventListener('click', e => {
   if (e.target === overlay) closePopup();
 });
-
 
 popupImg.addEventListener('pointerdown', e => {
   isDragging = true;
@@ -188,7 +178,7 @@ popupImg.addEventListener('pointermove', e => {
 
   popupImg.style.transition = 'none';
   popupImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scale})`;
-  popupImg.style.borderRadius = '25%';
+  popupImg.style.borderRadius = '50%';
   overlay.style.backgroundColor = `rgba(0,0,0,${0.8 * scale})`;
 });
 
@@ -203,15 +193,15 @@ popupImg.addEventListener('pointerup', e => {
   if (distance > 100) {
     closePopup();
   } else {
-    popupImg.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.4s ease';
-    popupImg.style.transform = 'translate(0px, 0px) scale(1)';
+    popupImg.style.transition = 'transform 0.3s ease, border-radius 0.3s ease';
+    popupImg.style.transform = 'translate(0, 0) scale(1)';
     popupImg.style.borderRadius = '12px';
-    overlay.style.transition = 'background-color 0.5s ease';
+    overlay.style.transition = 'background-color 0.3s ease';
     overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
-
-    // Clear transition after it's done
     popupImg.addEventListener('transitionend', () => {
       popupImg.style.transition = '';
-    }, { once: true });
+    }, {
+      once: true
+    });
   }
 });
