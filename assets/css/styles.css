@@ -52,14 +52,14 @@ body, html {
 }
 
 .role-title {
-  font-size: 1.3rem;
+  font-size: 2rem;
   margin: 35px 0 15px;
   color: #bbb;
   text-align: left;
   animation: fadeUp 0.8s ease forwards;
 }
 
-@media (orientation: landscape) and (max-width: 767px) {
+@media (orientation: landscape) {
   .role-title {
     font-size: 1rem;
   }
@@ -68,7 +68,7 @@ body, html {
 .card {
   transition: transform 0.3s ease;
   transform: scale(1);
-cursor: pointer;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -98,7 +98,7 @@ cursor: pointer;
 .members-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Adjust the space between member cards */
+  gap: 5px; /* Adjust the space between member cards */
   justify-content: center; /* Optional: keep them centered */
 }
 
@@ -111,7 +111,7 @@ cursor: pointer;
 }
 
 .card h1 {
-  font-size: 17px;
+  font-size: 19px;
   margin: 0;
   font-weight: 500;
 }
@@ -133,7 +133,7 @@ cursor: pointer;
 
   .card {
     padding: 12px 14px;
-    height: 68px;
+    height: 50px;
   }
 
   .profile-pic {
@@ -143,6 +143,17 @@ cursor: pointer;
 
   .card h1 {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .card {
+    padding: 12px 14px;
+    height: 58px;
   }
 }
 
@@ -163,7 +174,7 @@ cursor: pointer;
   }
 
   .card h1 {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .role-title {
@@ -192,11 +203,19 @@ cursor: pointer;
 
 @media (orientation: landscape) and (max-width: 767px) {
   /* mobile landscape */
-  .social-buttons {
-    justify-content: flex-start;
+ 
+  .role-title {
+  font-size: 1rem;
   }
-}
 
+  .card h1 {
+  font-size: 21px;
+  }
+
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  
 .social-button {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
