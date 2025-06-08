@@ -98,7 +98,7 @@ cursor: pointer;
 .members-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* Adjust the space between member cards */
+  gap: 10px; /* Adjust the space between member cards */
   justify-content: center; /* Optional: keep them centered */
 }
 
