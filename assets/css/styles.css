@@ -98,7 +98,7 @@ cursor: pointer;
 .card-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px; /* Adjust the space between member cards */
+  gap: 10px; /* Adjust the space between member cards */
   justify-content: center; /* Optional: keep them centered */
 }
 
@@ -119,10 +119,10 @@ cursor: pointer;
 .footer {
   text-align: center;
   padding: 20px 10px;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 60px;
+  margin-top: 30px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -322,7 +322,7 @@ cursor: pointer;
 /* ✅ Mobile Landscape – Less Tall Cards, Bigger Logos/Text */
 @media (orientation: landscape) and (max-width: 767px) {
   .card {
-    height: 40px; /* Less tall */
+    height: 50px; /* Less tall */
     padding: 10px 12px;
   }
 
@@ -333,7 +333,7 @@ cursor: pointer;
   }
 
   .card h1 {
-    font-size: 18px; /* Bigger text */
+    font-size: 20px; /* Bigger text */
   }
 
   .role-title {
