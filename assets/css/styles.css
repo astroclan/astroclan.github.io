@@ -185,7 +185,7 @@ body, html {
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .card {
@@ -257,8 +257,8 @@ body, html {
 }
 
 .social-button svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .button-2-wrapper {
