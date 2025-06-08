@@ -261,7 +261,7 @@ body, html {
   height: 20px;
 }
 
-.button-2 {
+.button-2-wrapper {
   display: flex;
   justify-content: center;
   padding: 24px 0 5px;
