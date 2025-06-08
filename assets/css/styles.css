@@ -95,6 +95,13 @@ cursor: pointer;
   transform: scale(1.1);
 }
 
+.members-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Adjust the space between member cards */
+  justify-content: center; /* Optional: keep them centered */
+}
+
 .profile-pic {
   width: 50px;
   height: 50px;
