@@ -59,6 +59,12 @@ body, html {
   animation: fadeUp 0.8s ease forwards;
 }
 
+@media (orientation: landscape) and (max-width: 767px) {
+  .role-title {
+    font-size: 1rem;
+  }
+}
+
 .card {
   transition: transform 0.3s ease;
   transform: scale(1);
@@ -167,7 +173,6 @@ cursor: pointer;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
   animation: fadeUp 0.8s ease forwards;
 }
