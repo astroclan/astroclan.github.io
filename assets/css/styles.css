@@ -229,7 +229,7 @@ cursor: pointer;
 .join-button-wrapper {
   display: flex;
   justify-content: center;
-  padding: 24px 0 12px;
+  padding: 24px 0 5px;
 }
 
 .join-button {
