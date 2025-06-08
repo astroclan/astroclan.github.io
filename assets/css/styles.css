@@ -114,7 +114,7 @@ body, html {
   }
 }
 
-.card:hover {
+.card:active {
   animation: bounceScale 0.5s ease;
 }
 
@@ -261,10 +261,10 @@ body, html {
   height: 20px;
 }
 
-.join-button-wrapper {
+.button-2 {
   display: flex;
   justify-content: center;
-  padding: 20px 0 5px;
+  padding: 24px 0 5px;
 }
 
 .join-button-wrapper {
@@ -294,6 +294,29 @@ body, html {
 .join-button:active {
  animation: bounceScale 0.5s ease;
 }
+
+.button-2 {
+  background-color: #A9D3FB; /* Material Blue */
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 450;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+  width: 80%;
+  max-width: 400px; /* Optional max width */
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-2:active {
+ animation: bounceScale 0.5s ease;
+}
+
 /* For wider screens */
 @media screen and (min-width: 600px) {
   .join-button {
