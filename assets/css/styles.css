@@ -168,6 +168,19 @@ cursor: pointer;
   animation: fadeUp 0.8s ease forwards;
 }
 
+@media (min-width: 600px) {
+  .social-buttons {
+    justify-content: flex-start; /* Align left */
+  }
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+  /* mobile landscape */
+  .social-buttons {
+    justify-content: flex-start;
+  }
+}
+
 .social-button {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -226,8 +239,15 @@ cursor: pointer;
   transform: scale(1.1);
 }
 /* For wider screens */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .join-button {
     width: 30%;
+    justify-content: flex-start;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+  .join-button-container {
+    justify-content: flex-start;
   }
 }
