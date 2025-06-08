@@ -96,6 +96,23 @@ body, html {
   transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.08);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+
 .card:hover {
   animation: bounceScale 0.5s ease;
 }
@@ -368,17 +385,5 @@ body, html {
 
   .join-button-container {
     justify-content: flex-start;
-  }
-}
-
-@keyframes bounceScale {
-  0% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.12);
-  }
-  100% {
-    transform: scale(1);
   }
 }
