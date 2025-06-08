@@ -96,11 +96,7 @@ cursor: pointer;
   animation: fadeUp 0.8s ease forwards;
 }
 
-  .card:active {
-    transform: scale(1.05);
-  }
-
-.card.expanded {
+.card:hover {
   transform: scale(1.1);
 }
 
@@ -236,6 +232,7 @@ cursor: pointer;
 
 .social-button:hover {
   background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
 }
 
 .social-button svg {
