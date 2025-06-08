@@ -274,7 +274,7 @@ body, html {
 }
 
 .join-button {
-  background-color: #2196f3; /* Material Blue */
+  background-color: #A9D3FB; /* Material Blue */
   color: #000; /* Black text */
   font-family: "Roboto";
   font-size: 18px;
@@ -296,7 +296,7 @@ body, html {
 }
 
 .button-2 {
-  background-color: #A9D3FB; /* Material Blue */
+  background-color: rgba(173, 216, 230, 0.2);
   color: #fff;
   font-family: "Roboto";
   font-size: 18px;
