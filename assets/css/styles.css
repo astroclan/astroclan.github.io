@@ -96,8 +96,8 @@ cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.card:hover {
-  transform: scale(1.1);
+.card:active {
+  animation: bounceScale 0.5s ease;
 }
 
 .card-row {
@@ -203,6 +203,11 @@ cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
+.social-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  animation: bounceScale 0.5s ease;
+}
+
 @media (min-width: 600px) {
   .social-buttons {
     justify-content: flex-start; /* Align left */
@@ -232,7 +237,7 @@ cursor: pointer;
 
 .social-button:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.1);
+  animation: bounceScale 0.5s ease;
 }
 
 .social-button svg {
@@ -366,5 +371,17 @@ cursor: pointer;
 
   .join-button-container {
     justify-content: flex-start;
+  }
+}
+
+@keyframes bounceScale {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
   }
 }
