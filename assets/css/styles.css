@@ -93,7 +93,7 @@ cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.25s ease;
   text-align: left;
-  animation: fadeUp 0.8s ease forwards;
+  transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
 .card:hover {
@@ -200,7 +200,7 @@ cursor: pointer;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 10px;
-  animation: fadeUp 0.8s ease forwards;
+  transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
 @media (min-width: 600px) {
@@ -225,7 +225,7 @@ cursor: pointer;
   align-items: center;
   justify-content: center;
   color: white;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
   width: 40px;
   height: 40px;
 }
