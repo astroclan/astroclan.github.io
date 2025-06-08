@@ -411,3 +411,30 @@ body, html {
     justify-content: flex-start;
   }
 }
+
+#img-popup-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
+
+#img-popup-overlay img {
+  position: absolute;
+  border-radius: 12px;
+  will-change: transform, border-radius;
+  cursor: grab;
+  user-select: none;
+  max-width: none;
+  transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+  touch-action: none;
+}
+.popup-img {
+  cursor: pointer;
+}
