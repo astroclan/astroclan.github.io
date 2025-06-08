@@ -28,7 +28,7 @@ body, html {
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Roboto';
-  background: linear-gradient(to right top, #1a1a2e, #16213e);
+  background-colour: #212121;
   color: #ffffff;
   padding: 40px 20px 100px;
   animation: fadeUp 0.8s ease forwards;
