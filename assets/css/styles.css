@@ -75,7 +75,6 @@ body, html {
 }
 
 .card {
-  transition: transform 0.3s ease;
   transform: scale(1);
   cursor: pointer;
   display: flex;
@@ -93,7 +92,7 @@ body, html {
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.25s ease;
   text-align: left;
-  transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 @keyframes bounce {
@@ -114,8 +113,9 @@ body, html {
   }
 }
 
-.card:active {
-  animation: bounceScale 0.5s ease;
+.card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
 }
 
 .card-row {
@@ -173,7 +173,7 @@ body, html {
 .footer-social-button {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  padding: 8px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
