@@ -1,0 +1,80 @@
+@media (orientation: landscape) and (max-width: 767px) {
+  .social-buttons {
+    justify-content: flex-start;
+  }
+  
+  .role-title {
+    font-size: 1rem;
+  }
+  
+  .join-button-container {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.4rem;
+  }
+  
+  .card {
+    padding: 12px 14px;
+    height: 68px;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card h1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .card {
+    height: auto;
+    padding: 10px 12px;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    gap: 1px;
+  }
+  
+  .profile-pic {
+    width: 45px;
+    height: 45px;
+    margin-right: 12px;
+  }
+  
+  .card h1 {
+    font-size: 17px;
+  }
+  
+  .role-title {
+    font-size: 1rem;
+  }
+  
+  footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 372px) {
+  .social-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .join-button {
+    width: 30%;
+    justify-content: flex-start;
+  }
+}

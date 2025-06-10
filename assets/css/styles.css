@@ -1,12 +1,3 @@
-@viewport {
-  width: device-width;
-  zoom: 1;
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 @keyframes fadeUp {
@@ -20,6 +11,14 @@
   }
 }
 
+@keyframes bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.08); }
+  50% { transform: scale(0.95); }
+  70% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -30,34 +29,43 @@ body, html {
   font-family: 'Roboto';
   background-color: #212121;
   color: #ffffff;
-  padding: 40px 20px 100px;
   animation: fadeUp 0.8s ease forwards;
 }
 
-.container {
+.container,
+.header,
+.main-title,
+.subtitle,
+.role-title,
+.footer {
   animation: fadeUp 0.8s ease forwards;
 }
 
 .header {
   text-align: center;
   margin-bottom: 40px;
-  animation: fadeUp 0.8s ease forwards;
 }
 
 .main-title {
-  font-size: 3rem;
+  color: #e8f7fc;
+  text-align: left;
+  font-size: 35px;
+  margin-top: 90px;
   margin-bottom: 6px;
   font-weight: 700;
-  animation: fadeUp 0.8s ease forwards;
+}
+
+.highlight {
+  color: #a6e3f7;
 }
 
 .subtitle {
+  text-align: left;
   font-size: 15px;
-  color: rgba(173, 216, 230, 0.6);
+  color: #B0C0D0;
   margin-top: 0;
   font-weight: 400;
   letter-spacing: 0.5px;
-  animation: fadeUp 0.8s ease forwards;
 }
 
 .role-title {
@@ -65,13 +73,6 @@ body, html {
   margin: 35px 0 15px;
   color: #bbb;
   text-align: left;
-  animation: fadeUp 0.8s ease forwards;
-}
-
-@media (orientation: landscape) and (max-width: 767px) {
-  .role-title {
-    font-size: 1rem;
-  }
 }
 
 .card {
@@ -90,45 +91,26 @@ body, html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.25s ease;
-  text-align: left;
   transition: background 0.3s ease, transform 0.3s ease;
-}
-
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.08);
-  }
-  50% {
-    transform: scale(0.95);
-  }
-  70% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
+  text-align: left;
 }
 
 .card:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .card-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Adjust the space between member cards */
-  justify-content: center; /* Optional: keep them centered */
+  gap: 10px;
+  justify-content: center;
 }
 
 .profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 30px;
   object-fit: cover;
   margin-right: 16px;
 }
@@ -160,7 +142,6 @@ body, html {
   color: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 20px;
-  animation: fadeUp 0.8s ease forwards;
 }
 
 .social-footer {
@@ -185,125 +166,63 @@ body, html {
   transform: scale(1.1);
 }
 
+.footer-social-button img {
+  width: 22px;
+  height: 22px;
+}
+
 .footer-social-button svg {
   width: 22px;
   height: 22px;
   fill: white;
 }
 
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 2.4rem;
-  }
-
-  .card {
-    padding: 12px 14px;
-    height: 68px;
-  }
-
-  .profile-pic {
-    width: 50px;
-    height: 50px;
-  }
-
-  .card h1 {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 3rem;
-  }
-
-  .card {
-    height: auto;
-    padding: 10px 12px;
-  }
-
-  .profile-pic {
-    width: 45px;
-    height: 45px;
-    margin-right: 12px;
-  }
-
-  .card h1 {
-    font-size: 17px;
-  }
-
-  .role-title {
-    font-size: 1rem;
-  }
-
-  .footer {
-    font-size: 12px;
-  }
-}
-
 .social-buttons {
   margin-top: 16px;
+  border-radius: 25px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
-}
-
-.social-button:active {
-  animation: bounceScale 0.5s ease;
-}
-
-@media (min-width: 600px) {
-  .social-buttons {
-    justify-content: flex-start; /* Align left */
-  }
-}
-
-@media (orientation: landscape) and (max-width: 767px) {
-  /* mobile landscape */
-  .social-buttons {
-    justify-content: flex-start;
-  }
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .social-button {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 8px 10px;
   display: flex;
+  background: #293039;
+  border-radius: 50px;
+  padding: 10px;
   align-items: center;
   justify-content: center;
-  color: white;
-  transition: background 0.3s ease-in-out, transform 0.4s ease-in-out;
+  color: #e8f7fc;
+  transition: background 1.0s ease, transform 1.0s ease;
   width: 40px;
   height: 40px;
 }
 
 .social-button:active {
-  animation: bounceScale 0.5s ease;
+  transform: scale(1.1);
 }
 
-.social-button svg {
-  width: 24px;
-  height: 24px;
+.social-button svg,
+.social-button img {
+  width: 28px;
+  height: 28px;
 }
 
-.button-2-wrapper {
+.button-2-wrapper,
+.download-button-wrapper {
   display: flex;
   justify-content: center;
   padding: 24px 0 5px;
 }
 
-.join-button-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 24px 0 5px;
+.download-button-wrapper {
+  align-items: left;
 }
 
-.join-button {
-  background-color: #A9D3FB; /* Material Blue */
-  color: #000; /* Black text */
+.download-button,
+.button-2 {
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 450;
@@ -312,41 +231,34 @@ body, html {
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
   width: 80%;
-  max-width: 400px; /* Optional max width */
+  max-width: 400px;
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
 }
 
-.join-button:active {
- animation: bounceScale 0.5s ease;
+.download-button {
+  background-color: #A9D3FB;
+  color: #000;
 }
 
 .button-2 {
+  justify-content: flex-start;
+  margin-top: -15px;
   background-color: rgba(173, 216, 230, 0.08);
   color: #fff;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 450;
-  padding: 16px 32px;
-  border: none;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
-  width: 80%;
-  max-width: 400px; /* Optional max width */
-  text-align: center;
-  cursor: pointer;
 }
 
+.download-button:active,
 .button-2:active {
- animation: bounceScale 0.5s ease;
+  animation: bounceScale 0.5s ease;
 }
 
-/* For wider screens */
 @media screen and (min-width: 600px) {
+  .social-buttons {
+    justify-content: flex-start;
+  }
   .join-button {
     width: 30%;
     justify-content: flex-start;
@@ -354,96 +266,75 @@ body, html {
 }
 
 @media (orientation: landscape) and (max-width: 767px) {
+  .role-title {
+    font-size: 1rem;
+  }
+  .social-buttons,
   .join-button-container {
     justify-content: flex-start;
   }
+  .card {
+    height: 50px;
+    padding: 10px 12px;
+  }
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+  }
+  .card h1 {
+    font-size: 20px;
+  }
 }
 
-/* Default Mobile Portrait */
 @media (max-width: 768px) {
   .main-title {
     font-size: 2.4rem;
   }
-
   .card {
     padding: 12px 14px;
     height: 68px;
   }
-
   .profile-pic {
     width: 50px;
     height: 50px;
   }
-
   .card h1 {
     font-size: 15px;
   }
 }
 
-/* Very Small Screens (Mobile Portrait) */
 @media (max-width: 480px) {
   .main-title {
     font-size: 2rem;
   }
-
   .card {
     height: auto;
     padding: 10px 12px;
   }
-
   .profile-pic {
     width: 45px;
     height: 45px;
     margin-right: 12px;
   }
-
   .card h1 {
     font-size: 17px;
   }
-
-  .role-title {
+  .role-title,
+  .footer {
     font-size: 1rem;
   }
-
   .footer {
     font-size: 12px;
   }
 }
 
-/* ✅ Mobile Landscape – Less Tall Cards, Bigger Logos/Text */
-@media (orientation: landscape) and (max-width: 767px) {
-  .card {
-    height: 50px; /* Less tall */
-    padding: 10px 12px;
-  }
-
-  .profile-pic {
-    width: 60px;
-    height: 60px; /* Bigger logo */
-    margin-right: 12px;
-  }
-
-  .card h1 {
-    font-size: 20px; /* Bigger text */
-  }
-
-  .role-title {
-    font-size: 1rem;
-  }
-
-  .social-buttons {
-    justify-content: flex-start;
-  }
-
-  .join-button-container {
-    justify-content: flex-start;
-  }
-}
-
+/* Image Popup */
 #img-popup-overlay {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.8);
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
   display: none;
   align-items: center;
   justify-content: center;
@@ -463,6 +354,7 @@ body, html {
   transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
   touch-action: none;
 }
+
 .popup-img {
   cursor: pointer;
 }
